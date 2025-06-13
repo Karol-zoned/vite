@@ -38,7 +38,7 @@ function updateAuthUI() {
     authSection.className = 'flex flex-col sm:flex-row items-center'
   } else {
     authSection.innerHTML = `
-      <a href="src/login/index.html" 
+      <a href="/login/" 
          class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition block text-center w-full sm:inline-block sm:w-auto">
         Zaloguj
       </a>
@@ -63,9 +63,10 @@ async function loadContent() {
   const path = window.location.pathname
   const contentDiv = document.getElementById('content')
   
-  if (path.includes('/login')) {
-    window.location.href = '/login/'
-    return
+if (path.includes('/login')) {
+  const res = await fetch('/login/index.html')
+  const html = await res.text()
+  contentDiv.innerHTML = html
   }
 
   const { data: article, error } = await supabase
