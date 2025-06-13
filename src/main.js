@@ -38,7 +38,7 @@ function updateAuthUI() {
     authSection.className = 'flex flex-col sm:flex-row items-center'
   } else {
     authSection.innerHTML = `
-      <a href="/login/" 
+      <a href="login/" 
          class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition block text-center w-full sm:inline-block sm:w-auto">
         Zaloguj
       </a>
