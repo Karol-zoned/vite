@@ -1,8 +1,8 @@
 import { dirname, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { defineConfig } from 'vite'
-import { glob } from 'node:fs/promises'
 import tailwindcss from '@tailwindcss/vite'
+import { glob } from 'glob';
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 
